@@ -9,8 +9,14 @@ duration = config["data_harvesting"]["starting_date"]
 symbol = config["data_harvesting"]["symbol"]
 timeframe = config["data_harvesting"]["timeframe"]
 
-data_location_folder = config["data_harvesting"]["location"]
-data_location_symbol = os.path.join(os.path.dirname(os.path.realpath(__file__)), data_location_folder, symbol)
+# Checking if necessary folders exist and if not creating them
+current_dir = os.path.dirname(os.path.realpath(__file__))
+data_location_folder = os.path.join(current_dir, config["data_harvesting"]["location"])
+
+if not os.path.isdir(data_location_folder):
+    os.mkdir(data_location_folder)
+
+data_location_symbol = os.path.join(data_location_folder, symbol)
 
 if not os.path.isdir(data_location_symbol):
     os.mkdir(data_location_symbol)
@@ -20,6 +26,7 @@ data_location = os.path.join(data_location_symbol, timeframe)
 if not os.path.isdir(data_location):
     os.mkdir(data_location)
 
+# Calculating dates to get data
 current_date = datetime.now()
 
 starting_date = current_date - relativedelta(months=duration)

@@ -1,0 +1,5 @@
+[data_harvesting]
+location = "data"
+starting_date = 12 # months
+symbol = "BTC-USD"
+timeframe = "1h"

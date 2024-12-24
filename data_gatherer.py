@@ -1,6 +1,5 @@
 import toml, os
 import yfinance as yf
-import pandas as pd
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 

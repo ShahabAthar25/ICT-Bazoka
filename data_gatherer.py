@@ -4,9 +4,6 @@ from utils import setup_logger, time_period_to_dates
 
 logger = setup_logger(__name__, log_file="data_gatherer.log")
 
-# logger.basicConfig(level=logger.INFO, filename="logs/data_gatherer.log", filemode="w",
-#                     format="[%(asctime)s] [%(levelname)s] %(message)s")
-
 logger.info("Reading Config...")
 
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))

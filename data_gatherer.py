@@ -1,7 +1,6 @@
 import toml, os
 import yfinance as yf
-from utils.date_period_converter import time_period_to_dates
-from utils.logger import setup_logger
+from utils import setup_logger, time_period_to_dates
 
 logger = setup_logger(__name__, log_file="data_gatherer.log")
 
